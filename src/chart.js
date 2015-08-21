@@ -8,6 +8,7 @@ angular.module('ui.chart', [])
         var renderChart = function () {
           var data = scope.$eval(attrs.uiChart);
           elem.html('');
+          elem.attr('id', attrs.chartName);
           if (!angular.isArray(data)) {
             return;
           }
@@ -20,7 +21,7 @@ angular.module('ui.chart', [])
             }
           }
 
-          elem.jqplot(data, opts);
+          $.jqplot(attrs.chartName, data, opts);
         };
 
         scope.$watch(attrs.uiChart, function () {
