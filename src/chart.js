@@ -8,7 +8,6 @@ angular.module('ui.chart', [])
         var renderChart = function () {
           var data = scope.$eval(attrs.uiChart);
           elem.html('');
-          elem.attr('id', attrs.chartName || 'myUiChart');
           if (!angular.isArray(data)) {
             return;
           }
